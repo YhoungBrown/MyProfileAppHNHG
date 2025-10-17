@@ -20,6 +20,7 @@ const index = () => {
           paddingTop: insets.top, 
           paddingBottom: insets.bottom 
         }}>
+          
           <About  />  
 
         <ThemedView style={{ 

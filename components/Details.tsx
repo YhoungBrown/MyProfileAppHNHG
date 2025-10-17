@@ -16,7 +16,7 @@ const Details = ({ headline, body }: DetailsProps) => {
 
   return (
     
-<ThemedView style={{marginHorizontal:10}}>
+<ThemedView style={{marginHorizontal:10, zIndex: 1}}>
         {headline && (
             <ThemedView style={styles.DetailsHeadlineContainer}>
             <ThemedView style={{

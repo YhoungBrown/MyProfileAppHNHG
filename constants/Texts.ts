@@ -9,3 +9,6 @@ export const Texts = {
     contactBody: ` I'm currently open to freelance opportunities, full-time roles, or collaborative projects where I can contribute to building user-focused, performant mobile and web applications. Whether you have a question, an idea, or just want to say hello feel free to reach out. I’ll do my best to respond promptly.`,
     contactAdress:`\n📧 omotolaodumosu04@gmail.com\nLinkedIn: Omotola Odumosu\nTwitter: @YhoungBrown`
 };
+
+export const Name = 'Omotola Odumosu'
+export const Bio = 'Fullstack Developer (React Native, C# / .NET)'
