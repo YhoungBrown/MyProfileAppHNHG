@@ -18,7 +18,9 @@ const About = () => {
         <ImageBackground
           source={require('../assets/images/MyProfileAppHNG_CoverPic.jpg')}
           style={styles.ProfileCoverImage}
-        />
+        >
+          <ThemedView style={styles.ImageOverlay} />
+        </ImageBackground>
 
         <ThemedView style={{
           backgroundColor: theme === 'dark' ? 'black' : 'white',
