@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
-        marginVertical: 10,
+        marginTop: 8,
+        marginBottom: 12,
     },
     DetailsHeadlinesquare: {
         width: 100,
@@ -20,12 +21,14 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: 4,
         padding: 5
     },
     DetailsBody: {
-        fontSize: 14,
-        fontFamily: 'Roboto-Regular',
+        fontSize: 15,
+        lineHeight: 24,
+        opacity: 0.9,
+        textAlign: 'justify',
     },
 });
 

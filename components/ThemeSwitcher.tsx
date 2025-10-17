@@ -1,26 +1,29 @@
 import React from 'react';
-import { Switch } from 'react-native';
+import { Pressable, Switch } from 'react-native';
 import { useThemeContext } from '../context/ThemeContext';
 import styles from '../stylesheets/ThemeSwitcherStylesheet';
 import { ThemedText } from './themed-text';
-import { ThemedView } from './themed-view';
 
 const ThemeSwitcher: React.FC = () => {
   const { theme, toggleTheme } = useThemeContext();
 
   return (
-    <ThemedView style={[
-      styles.container, 
-      { backgroundColor:
-            theme === 'dark'
-              ? 'rgba(0, 0, 0, 0.6)'
-              : 'rgba(255, 255, 255, 0.6)',
-      }]}>
-
+    <Pressable
+      onPress={toggleTheme}
+      style={({ pressed }) => [
+        styles.container, 
+        { 
+          backgroundColor: theme === 'dark'
+            ? 'rgba(0, 0, 0, 0.7)'
+            : 'rgba(255, 255, 255, 0.7)',
+          transform: [{ scale: pressed ? 0.95 : 1 }],
+        }
+      ]}
+    >
       <ThemedText style={{
         color: theme === 'dark' ? 'white' : 'black',
         ...styles.text}}>
-        {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
+        {theme === 'dark' ? '🌙 Dark' : '☀️ Light'}
       </ThemedText>
 
       <Switch
@@ -33,7 +36,7 @@ const ThemeSwitcher: React.FC = () => {
         }}
         style={styles.switch}
       />
-    </ThemedView>
+    </Pressable>
   );
 };
 

@@ -1,14 +1,26 @@
 import { Texts } from '@/constants/Texts'
-import React from 'react'
+import { useThemeContext } from '@/context/ThemeContext'
+import React, { useState } from 'react'
+import ContactModal from './ContactModal'
 import Details from './Details'
 import { ThemedView } from './themed-view'
 
 const Contact = () => {
-  
+  const [modalVisible, setModalVisible] = useState(false);
+  const { theme } = useThemeContext();
+
   return (
     <ThemedView>
-      <Details headline={Texts.contactHeadline} body={Texts.contactBody} />
-      <Details body={Texts.contactAdress} />
+      <Details 
+        headline={Texts.contactHeadline} 
+        briefText={Texts.contactBrief} 
+        fullText={Texts.contactFull}
+        onContactClick={() => setModalVisible(true)}
+      />
+      <ContactModal 
+        visible={modalVisible} 
+        onClose={() => setModalVisible(false)} 
+      />
     </ThemedView>
   )
 }

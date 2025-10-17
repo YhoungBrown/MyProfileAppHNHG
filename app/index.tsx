@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native'
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import About from '../components/About'
 import Contact from '../components/Contact'
+import SectionDivider from '../components/SectionDivider'
 import Skills from '../components/Skills'
 import { ThemedView } from '../components/themed-view'
 import style from '../stylesheets/indexStylesheet'
@@ -22,34 +23,11 @@ const index = () => {
         }}>
           
           <About  />  
-
-        <ThemedView style={{ 
-            marginRight: 10,
-            marginLeft: 10
-          }}>
-            <ThemedView style={{ 
-            height: 0.5,
-            flexDirection: 'row',
-            width: '100%',
-            backgroundColor: theme === 'dark' ? 'gray' : 'green',
-            marginVertical: 10
-          }} />
-        </ThemedView>
+          <SectionDivider marginVertical={8} />
           
           <Skills />
 
-          <ThemedView style={{ 
-            marginRight: 10,
-            marginLeft: 10
-          }}>
-            <ThemedView style={{ 
-            height: 0.5,
-            flexDirection: 'row',
-            width: '100%',
-            backgroundColor: theme === 'dark' ? 'gray' : 'green',
-            marginVertical: 15
-          }} />
-        </ThemedView>
+          <SectionDivider marginVertical={8} />
 
           <Contact />
         </ThemedView>

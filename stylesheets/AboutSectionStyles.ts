@@ -4,7 +4,7 @@ const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   ProfileImageContainer: {
     width: '100%',
-    height: height * 0.25, 
+    height: Math.max(height * 0.25, 200), 
     position: 'relative',
   },
 
@@ -21,14 +21,14 @@ const styles = StyleSheet.create({
   },
 
   Profilepicborder: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
+    width: Math.min(150, width * 0.35),
+    height: Math.min(150, width * 0.35),
+    borderRadius: Math.min(75, width * 0.175),
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    top: height * 0.13,
-    right: width * 0.25,
+    top: Math.max(height * 0.13, 100),
+    left: (width - Math.min(150, width * 0.35)) / 2,
     zIndex: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
@@ -38,17 +38,17 @@ const styles = StyleSheet.create({
   },
 
   ProfilePic: {
-    height: 140,
-    width: 140,
-    borderRadius: 70,
+    height: Math.min(140, width * 0.32),
+    width: Math.min(140, width * 0.32),
+    borderRadius: Math.min(70, width * 0.16),
     resizeMode: 'cover',
   },
 
   BioContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 70, 
-    paddingHorizontal: 20,
+    marginTop: Math.max(50, height * 0.06), 
+    paddingHorizontal: 16,
   },
 
   Bio: {
